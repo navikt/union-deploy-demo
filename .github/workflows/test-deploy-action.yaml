@@ -1,0 +1,25 @@
+name: Test deploy action
+
+# Runs the deploy action/workflow against the example tasks in test/tasks/ whenever
+# either changes, so a broken action.yaml or deploy.yaml is caught before release.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - task/*
+  workflow_dispatch:
+
+
+jobs:
+  demo:
+    permissions:
+      contents: read
+      id-token: write
+    uses: navikt/union-deploy/.github/workflows/deploy.yaml@main
+    with:
+      flyte-task-file: tasks/demo.py
+      dependency-file: pyproject.toml
+      union-project: union-deploy-demo
+      union-domain: development
+      environment: dev

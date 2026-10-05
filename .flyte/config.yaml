@@ -1,0 +1,8 @@
+admin:
+  endpoint: dns:///union.dev.data.nav.no
+image:
+  builder: remote
+task:
+  domain: development
+  org: union-nav
+  project: union-deploy-demo

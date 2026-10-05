@@ -1,5 +1,5 @@
-name: Test deploy action
-
+name: Deploy Demo
+ 
 # Runs the deploy action/workflow against the example tasks in test/tasks/ whenever
 # either changes, so a broken action.yaml or deploy.yaml is caught before release.
 on:
@@ -7,7 +7,7 @@ on:
     branches:
       - main
     paths:
-      - task/*
+      - tasks/*
   workflow_dispatch:
 
 

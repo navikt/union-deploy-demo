@@ -30,7 +30,7 @@ env = flyte.TaskEnvironment(
 
 @env.task(entrypoint=True, report=True)
 async def main() -> str:
-    message = "Hello CI!"
+    message = "Shipped!"
     banner = pyfiglet.figlet_format(message, font="small")
 
     await flyte.report.log.aio(
